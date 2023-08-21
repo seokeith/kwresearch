@@ -7,6 +7,19 @@ from sklearn.linear_model import LinearRegression
 
 st.title('Keyword Analyzer App')
 
+# Instructions for the user
+st.markdown("""
+### Instructions:
+1. **First CSV Requirements**:
+    - Columns: `keyword group`, `category 1`, `category 2`, `keywords`, `search volume`, `keyword difficulty`
+    - This file should have known search volumes and keyword difficulties.
+  
+2. **Second CSV Requirements**:
+    - Columns: `keywords`
+    - This file is for predicting search volume and keyword difficulty based on the first CSV.
+
+Upload the first CSV to begin the process.
+""")
 # Function to analyze common themes
 def analyze_common_themes(data):
     data['tokens'] = data['keywords'].apply(word_tokenize)
